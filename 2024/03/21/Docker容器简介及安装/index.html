@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="简介教程： 🎉 Docker 简介和安装 - Docker 快速入门 - 易文档 (easydoc.net)  应用打包、分发、部署的工具   打包：将开发软件、第三方库、软件依赖打包在一起   分发：将打包的“包”上传，其他人方便获取和安装   部署：用“包”可以在任意系统上运行开发的软件  可以理解为一个虚拟机，并且只包含你软件运行的环境，其他的都不要，性能好   与普通虚拟机的区别">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Docker容器简介及安装">
+<meta property="og:url" content="http://example.com/2024/03/21/Docker%E5%AE%B9%E5%99%A8%E7%AE%80%E4%BB%8B%E5%8F%8A%E5%AE%89%E8%A3%85/index.html">
+<meta property="og:site_name" content="本喵不是坑货の小空间">
+<meta property="og:description" content="简介教程： 🎉 Docker 简介和安装 - Docker 快速入门 - 易文档 (easydoc.net)  应用打包、分发、部署的工具   打包：将开发软件、第三方库、软件依赖打包在一起   分发：将打包的“包”上传，其他人方便获取和安装   部署：用“包”可以在任意系统上运行开发的软件  可以理解为一个虚拟机，并且只包含你软件运行的环境，其他的都不要，性能好   与普通虚拟机的区别">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2024/03/21/Docker%E5%AE%B9%E5%99%A8%E7%AE%80%E4%BB%8B%E5%8F%8A%E5%AE%89%E8%A3%85/image-20240321152038680.png">
+<meta property="article:published_time" content="2024-03-21T01:56:00.000Z">
+<meta property="article:modified_time" content="2024-03-21T08:05:42.584Z">
+<meta property="article:author" content="Wang">
+<meta property="article:tag" content="学习">
+<meta property="article:tag" content="Docker">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2024/03/21/Docker%E5%AE%B9%E5%99%A8%E7%AE%80%E4%BB%8B%E5%8F%8A%E5%AE%89%E8%A3%85/image-20240321152038680.png">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon-2.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192-2.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-2.png">
+        
+      
+    
+    <!-- title -->
+    <title>Docker容器简介及安装</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="目录"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="目录"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="顶部" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">首页</a></li><!--
+     --><!--
+       --><li><a href="/archives/">归档</a></li><!--
+     --><!--
+       --><li><a href="/categories/">分类</a></li><!--
+     --><!--
+       --><li><a href="/tags/">标签</a></li><!--
+     --><!--
+       --><li><a href="/about/">关于</a></li><!--
+     --><!--
+       --><li><a href="/search/">搜索</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="上一篇" href="/2024/03/21/Docker%E5%AE%B9%E5%99%A8%E4%BD%BF%E7%94%A8/"><i class="fa-solid fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="下一篇" href="/2024/03/19/%E5%BD%B1%E5%88%80RPA/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="返回顶部" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="分享文章" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2024/03/21/Docker%E5%AE%B9%E5%99%A8%E7%AE%80%E4%BB%8B%E5%8F%8A%E5%AE%89%E8%A3%85/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2024/03/21/Docker%E5%AE%B9%E5%99%A8%E7%AE%80%E4%BB%8B%E5%8F%8A%E5%AE%89%E8%A3%85/&text=Docker容器简介及安装"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2024/03/21/Docker%E5%AE%B9%E5%99%A8%E7%AE%80%E4%BB%8B%E5%8F%8A%E5%AE%89%E8%A3%85/&title=Docker容器简介及安装"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2024/03/21/Docker%E5%AE%B9%E5%99%A8%E7%AE%80%E4%BB%8B%E5%8F%8A%E5%AE%89%E8%A3%85/&is_video=false&description=Docker容器简介及安装"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Docker容器简介及安装&body=Check out this article: http://example.com/2024/03/21/Docker%E5%AE%B9%E5%99%A8%E7%AE%80%E4%BB%8B%E5%8F%8A%E5%AE%89%E8%A3%85/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2024/03/21/Docker%E5%AE%B9%E5%99%A8%E7%AE%80%E4%BB%8B%E5%8F%8A%E5%AE%89%E8%A3%85/&title=Docker容器简介及安装"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2024/03/21/Docker%E5%AE%B9%E5%99%A8%E7%AE%80%E4%BB%8B%E5%8F%8A%E5%AE%89%E8%A3%85/&title=Docker容器简介及安装"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2024/03/21/Docker%E5%AE%B9%E5%99%A8%E7%AE%80%E4%BB%8B%E5%8F%8A%E5%AE%89%E8%A3%85/&title=Docker容器简介及安装"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2024/03/21/Docker%E5%AE%B9%E5%99%A8%E7%AE%80%E4%BB%8B%E5%8F%8A%E5%AE%89%E8%A3%85/&title=Docker容器简介及安装"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2024/03/21/Docker%E5%AE%B9%E5%99%A8%E7%AE%80%E4%BB%8B%E5%8F%8A%E5%AE%89%E8%A3%85/&name=Docker容器简介及安装&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2024/03/21/Docker%E5%AE%B9%E5%99%A8%E7%AE%80%E4%BB%8B%E5%8F%8A%E5%AE%89%E8%A3%85/&t=Docker容器简介及安装"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    
+    
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E2%80%93CentOS-7"><span class="toc-number">2.</span> <span class="toc-text">安装–CentOS 7</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E3%80%81%E5%89%8D%E6%9C%9F%E5%87%86%E5%A4%87"><span class="toc-number">2.0.1.</span> <span class="toc-text">1、前期准备</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E2%80%93Windows"><span class="toc-number">3.</span> <span class="toc-text">安装–Windows</span></a></li></ol>
+      </div>
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        Docker容器简介及安装
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">Wang</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2024-03-21T01:56:00.000Z" class="dt-published" itemprop="datePublished">2024-03-21</time>
+        
+        (Updated: <time datetime="2024-03-21T08:05:42.584Z" class="dt-updated" itemprop="dateModified">2024-03-21</time>)
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fa-solid fa-archive"></i>
+        <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a> › <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0/Docker/">Docker</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fa-solid fa-tag"></i>
+        <a class="p-category" href="/tags/Docker/" rel="tag">Docker</a>, <a class="p-category" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>教程： <a target="_blank" rel="noopener" href="https://docker.easydoc.net/doc/81170005/cCewZWoN/lTKfePfP">🎉 Docker 简介和安装 - Docker 快速入门 - 易文档 (easydoc.net)</a></p>
+<ul>
+<li><p>应用<strong>打包</strong>、<strong>分发</strong>、<strong>部署</strong>的工具<br>   <strong>打包</strong>：将开发软件、第三方库、软件依赖打包在一起<br>   <strong>分发</strong>：将打包的“包”上传，其他人方便获取和安装<br>   <strong>部署</strong>：用“包”可以在任意系统上运行开发的软件</p>
+</li>
+<li><p>可以理解为一个虚拟机，并且只包含你软件运行的环境，其他的都不要，性能好</p>
+<p>  与普通虚拟机的区别</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>普通虚拟机</th>
+<th>Docker</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>性能</td>
+<td>虚拟了完整的系统，内存占用大，性能损耗大</td>
+<td>只虚拟运行环境，减少其余配置</td>
+</tr>
+<tr>
+<td>软件及环境安装</td>
+<td>手动安装，分别安装</td>
+<td>一个命令安装所需所有环境</td>
+</tr>
+</tbody></table>
+<ul>
+<li>优点：确保在所有系统上都是一致的环境，不会出现本机部署没问题，到虚拟机上就出现各种各样问题</li>
+<li>可以在<strong>windows</strong>上体验linux</li>
+<li><strong>镜像</strong> ：可以理解为软件安装包，是打包后产生的“包”，方便移动、传播、安装，也可以理解为java中的类</li>
+<li><strong>容器</strong> ：镜像安装后产生的一个“盒子”，与安装所在系统隔离开，每个软件的运行环境独立，也是Docker可以在不同系统上运行的原因，可以理解为java中的对象，是类（镜像）的实例</li>
+<li><strong>仓库</strong> ：可以存放镜像的地方，可以进行上传、分享、下载</li>
+</ul>
+<h2 id="安装–CentOS-7"><a href="#安装–CentOS-7" class="headerlink" title="安装–CentOS 7"></a>安装–CentOS 7</h2><p>教程：<a target="_blank" rel="noopener" href="https://blog.csdn.net/u014069688/article/details/100532774">Centos7下安装Docker（详细安装教程）_centos7安装教程-CSDN博客</a></p>
+<h4 id="1、前期准备"><a href="#1、前期准备" class="headerlink" title="1、前期准备"></a>1、前期准备</h4><ul>
+<li>root用户登录，不使用root用户的话，每条命令前加上sudo</li>
+<li>查看虚拟机内核版本，至少3.8以上</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# uname -a</span><br><span class="line">Linux localhost.localdomain 3.10.0-1160.el7.x86_64 #1 SMP Mon Oct 19 16:18:59 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux</span><br></pre></td></tr></table></figure>
+<ul>
+<li>yum包更新到最新(期间选择确认，输入y即可)<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum update</span><br></pre></td></tr></table></figure></li>
+<li>安装所需软件包<br>  yum-utils 提供了 yum-config-manager ，并且 device mapper 存储驱动程序需要 device-mapper-persistent-data 和 lvm2。<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum install -y yum-utils</span><br><span class="line">yum install -y lvm2</span><br><span class="line">yum install -y device-mapper-persistent-data</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="安装–Windows"><a href="#安装–Windows" class="headerlink" title="安装–Windows"></a>安装–Windows</h2><ul>
+<li>windows需要先启用Hyper-v功能，控制面板-&gt;程序-&gt;程序和功能-&gt;启用或关闭Windows功能</li>
+<li>官网下载：<a target="_blank" rel="noopener" href="https://www.docker.com/products/docker-desktop/">Docker Desktop: The #1 Containerization Tool for Developers | Docker</a></li>
+<li>点击ok，开始安装<img src="/2024/03/21/Docker%E5%AE%B9%E5%99%A8%E7%AE%80%E4%BB%8B%E5%8F%8A%E5%AE%89%E8%A3%85/image-20240321152038680.png"></li>
+<li>点击close，重启电脑</li>
+</ul>
+
+  </div>
+</article>
+
+
+    <div class="blog-post-comments">
+        <div id="utterances_thread">
+            <noscript>加载评论需要在浏览器启用 JavaScript 脚本支持。</noscript>
+        </div>
+    </div>
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">首页</a></li>
+        
+          <li><a href="/archives/">归档</a></li>
+        
+          <li><a href="/categories/">分类</a></li>
+        
+          <li><a href="/tags/">标签</a></li>
+        
+          <li><a href="/about/">关于</a></li>
+        
+          <li><a href="/search/">搜索</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E2%80%93CentOS-7"><span class="toc-number">2.</span> <span class="toc-text">安装–CentOS 7</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E3%80%81%E5%89%8D%E6%9C%9F%E5%87%86%E5%A4%87"><span class="toc-number">2.0.1.</span> <span class="toc-text">1、前期准备</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E2%80%93Windows"><span class="toc-number">3.</span> <span class="toc-text">安装–Windows</span></a></li></ol>
+      </div>
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2024/03/21/Docker%E5%AE%B9%E5%99%A8%E7%AE%80%E4%BB%8B%E5%8F%8A%E5%AE%89%E8%A3%85/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2024/03/21/Docker%E5%AE%B9%E5%99%A8%E7%AE%80%E4%BB%8B%E5%8F%8A%E5%AE%89%E8%A3%85/&text=Docker容器简介及安装"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2024/03/21/Docker%E5%AE%B9%E5%99%A8%E7%AE%80%E4%BB%8B%E5%8F%8A%E5%AE%89%E8%A3%85/&title=Docker容器简介及安装"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2024/03/21/Docker%E5%AE%B9%E5%99%A8%E7%AE%80%E4%BB%8B%E5%8F%8A%E5%AE%89%E8%A3%85/&is_video=false&description=Docker容器简介及安装"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Docker容器简介及安装&body=Check out this article: http://example.com/2024/03/21/Docker%E5%AE%B9%E5%99%A8%E7%AE%80%E4%BB%8B%E5%8F%8A%E5%AE%89%E8%A3%85/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2024/03/21/Docker%E5%AE%B9%E5%99%A8%E7%AE%80%E4%BB%8B%E5%8F%8A%E5%AE%89%E8%A3%85/&title=Docker容器简介及安装"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2024/03/21/Docker%E5%AE%B9%E5%99%A8%E7%AE%80%E4%BB%8B%E5%8F%8A%E5%AE%89%E8%A3%85/&title=Docker容器简介及安装"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2024/03/21/Docker%E5%AE%B9%E5%99%A8%E7%AE%80%E4%BB%8B%E5%8F%8A%E5%AE%89%E8%A3%85/&title=Docker容器简介及安装"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2024/03/21/Docker%E5%AE%B9%E5%99%A8%E7%AE%80%E4%BB%8B%E5%8F%8A%E5%AE%89%E8%A3%85/&title=Docker容器简介及安装"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2024/03/21/Docker%E5%AE%B9%E5%99%A8%E7%AE%80%E4%BB%8B%E5%8F%8A%E5%AE%89%E8%A3%85/&name=Docker容器简介及安装&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2024/03/21/Docker%E5%AE%B9%E5%99%A8%E7%AE%80%E4%BB%8B%E5%8F%8A%E5%AE%89%E8%A3%85/&t=Docker容器简介及安装"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2016-2024
+    Wang
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">首页</a></li><!--
+     --><!--
+       --><li><a href="/archives/">归档</a></li><!--
+     --><!--
+       --><li><a href="/categories/">分类</a></li><!--
+     --><!--
+       --><li><a href="/tags/">标签</a></li><!--
+     --><!--
+       --><li><a href="/about/">关于</a></li><!--
+     --><!--
+       --><li><a href="/search/">搜索</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板！\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功！");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+    <script type="text/javascript">
+      var utterances_repo = '1772347717/Hexo_Comment';
+      var utterances_issue_term = 'pathname';
+      var utterances_label = 'Comment';
+      var utterances_theme = 'github-dark';
+
+      (function(){
+          var script = document.createElement('script');
+
+          script.src = 'https://utteranc.es/client.js';
+          script.setAttribute('repo', utterances_repo);
+          script.setAttribute('issue-term', 'pathname');
+          script.setAttribute('label', utterances_label);
+          script.setAttribute('theme', utterances_theme);
+          script.setAttribute('crossorigin', 'anonymous');
+          script.async = true;
+          (document.getElementById('utterances_thread')).appendChild(script);
+      }());
+  </script>
+
+</body>
+</html>

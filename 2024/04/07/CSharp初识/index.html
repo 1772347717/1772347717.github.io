@@ -6,22 +6,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-    <meta name="description" content="介绍高级语言，必须依附于.NET平台  与C&#x2F;C++的区别：  C&#x2F;C++ 运行时 代码由编译器编译为机器指令直接运行  C# 编译时 由编译器编译为 IL中间语言 运行时经过.NET CLR转为机器指令  1.优点：直接编译为机器语言时耗费时间，这样会提升开发效率  2.缺点：性能降低  前期准备环境安装 .NET(dotnet)下载 .NET(Linux、macOS 和 W">
+    <meta name="description" content="介绍微软开发的高级语言，必须依附于.NET平台  与C&#x2F;C++的区别：  C&#x2F;C++ 运行时 代码由编译器编译为机器指令直接运行  C# 编译时 由编译器编译为 IL中间语言 运行时经过.NET CLR转为机器指令  1.优点：直接编译为机器语言时耗费时间，这样会提升开发效率  2.缺点：性能降低  前期准备环境安装 .NET(dotnet)下载 .NET(Linux、macO">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CSharp初识">
 <meta property="og:url" content="http://example.com/2024/04/07/CSharp%E5%88%9D%E8%AF%86/index.html">
 <meta property="og:site_name" content="本喵不是坑货の小空间">
-<meta property="og:description" content="介绍高级语言，必须依附于.NET平台  与C&#x2F;C++的区别：  C&#x2F;C++ 运行时 代码由编译器编译为机器指令直接运行  C# 编译时 由编译器编译为 IL中间语言 运行时经过.NET CLR转为机器指令  1.优点：直接编译为机器语言时耗费时间，这样会提升开发效率  2.缺点：性能降低  前期准备环境安装 .NET(dotnet)下载 .NET(Linux、macOS 和 W">
+<meta property="og:description" content="介绍微软开发的高级语言，必须依附于.NET平台  与C&#x2F;C++的区别：  C&#x2F;C++ 运行时 代码由编译器编译为机器指令直接运行  C# 编译时 由编译器编译为 IL中间语言 运行时经过.NET CLR转为机器指令  1.优点：直接编译为机器语言时耗费时间，这样会提升开发效率  2.缺点：性能降低  前期准备环境安装 .NET(dotnet)下载 .NET(Linux、macO">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2024/04/07/CSharp%E5%88%9D%E8%AF%86/image-20240418161602085.png">
+<meta property="og:image" content="http://example.com/2024/04/07/CSharp%E5%88%9D%E8%AF%86/image-20240418195047963.png">
+<meta property="og:image" content="http://example.com/2024/04/07/CSharp%E5%88%9D%E8%AF%86/image-20240418200714020.png">
+<meta property="og:image" content="http://example.com/2024/04/07/CSharp%E5%88%9D%E8%AF%86/image-20240418201116576.png">
 <meta property="article:published_time" content="2024-04-07T06:50:00.000Z">
-<meta property="article:modified_time" content="2024-04-18T09:09:19.854Z">
+<meta property="article:modified_time" content="2024-04-18T12:22:28.131Z">
 <meta property="article:author" content="Wang">
 <meta property="article:tag" content="学习">
 <meta property="article:tag" content="CSharp">
 <meta property="article:tag" content="Unity">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2024/04/07/CSharp%E5%88%9D%E8%AF%86/image-20240418161602085.png">
+<meta name="twitter:image" content="http://example.com/2024/04/07/CSharp%E5%88%9D%E8%AF%86/image-20240418195047963.png">
     
     
       
@@ -121,7 +123,7 @@
     
     
       <div id="toc">
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E6%9C%9F%E5%87%86%E5%A4%87"><span class="toc-number">2.</span> <span class="toc-text">前期准备</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85"><span class="toc-number">2.1.</span> <span class="toc-text">环境安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E7%A8%8B%E5%B7%A5%E5%85%B7%EF%BC%9AVS-Code"><span class="toc-number">2.2.</span> <span class="toc-text">编程工具：VS Code</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85"><span class="toc-number">2.2.1.</span> <span class="toc-text">下载安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8F%92%E4%BB%B6"><span class="toc-number">2.2.2.</span> <span class="toc-text">插件</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E6%9C%9F%E5%87%86%E5%A4%87"><span class="toc-number">2.</span> <span class="toc-text">前期准备</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85"><span class="toc-number">2.1.</span> <span class="toc-text">环境安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E7%A8%8B%E5%B7%A5%E5%85%B7%EF%BC%9AVS-2022-Community%EF%BC%88%E7%A4%BE%E5%8C%BA%E7%89%88%EF%BC%89"><span class="toc-number">2.2.</span> <span class="toc-text">编程工具：VS 2022 Community（社区版）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85"><span class="toc-number">2.2.1.</span> <span class="toc-text">下载安装</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E7%AC%AC%E4%B8%80%E4%B8%AA%E9%A1%B9%E7%9B%AE"><span class="toc-number">3.</span> <span class="toc-text">创建第一个项目</span></a></li></ol>
       </div>
     
   </span>
@@ -148,7 +150,7 @@
       
         <time datetime="2024-04-07T06:50:00.000Z" class="dt-published" itemprop="datePublished">2024-04-07</time>
         
-        (Updated: <time datetime="2024-04-18T09:09:19.854Z" class="dt-updated" itemprop="dateModified">2024-04-18</time>)
+        (Updated: <time datetime="2024-04-18T12:22:28.131Z" class="dt-updated" itemprop="dateModified">2024-04-18</time>)
         
       
     </div>
@@ -173,7 +175,7 @@
   
 
   <div class="content e-content" itemprop="articleBody">
-    <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>高级语言，必须依附于.NET平台</p>
+    <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>微软开发的高级语言，必须依附于.NET平台</p>
 <ul>
 <li>与C&#x2F;C++的区别：<br>  C&#x2F;C++ 运行时 代码由编译器编译为机器指令直接运行<br>  C# 编译时 由编译器编译为 IL中间语言 运行时经过.NET CLR转为机器指令<br>  1.优点：直接编译为机器语言时耗费时间，这样会提升开发效率<br>  2.缺点：性能降低</li>
 </ul>
@@ -183,8 +185,21 @@
 </ul>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dotnet --version</span><br></pre></td></tr></table></figure>
 
-<h3 id="编程工具：VS-Code"><a href="#编程工具：VS-Code" class="headerlink" title="编程工具：VS Code"></a>编程工具：VS Code</h3><h4 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a>下载安装</h4><h4 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h4><ul>
-<li>C#开发工具包：C# Dev Kit<br> 扩展工具，为C#开发提供了一系列强大的功能和实用工具，以帮助您更高效地编写、调试和维护代码。<br><img src="/2024/04/07/CSharp%E5%88%9D%E8%AF%86/image-20240418161602085.png"></li>
+<h3 id="编程工具：VS-2022-Community（社区版）"><a href="#编程工具：VS-2022-Community（社区版）" class="headerlink" title="编程工具：VS 2022 Community（社区版）"></a>编程工具：VS 2022 Community（社区版）</h3><h4 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a>下载安装</h4><ul>
+<li>网址：<a target="_blank" rel="noopener" href="https://visualstudio.microsoft.com/zh-hans/vs/community/">Visual Studio 2022 社区版 - 下载最新的免费版本 (microsoft.com)</a></li>
+<li>安装完成后，选择安装.NET桌面开发<img src="/2024/04/07/CSharp%E5%88%9D%E8%AF%86/image-20240418195047963.png"><br>后续需要使用unity开发也可再通过工具–&gt;获取工具和功能进入这个页面进行下载和卸载</li>
+</ul>
+<h2 id="创建第一个项目"><a href="#创建第一个项目" class="headerlink" title="创建第一个项目"></a>创建第一个项目</h2><ul>
+<li>选择控制台应用（.NET Framework），创建应用程序</li>
+</ul>
+<p><img src="/2024/04/07/CSharp%E5%88%9D%E8%AF%86/image-20240418200714020.png"></p>
+<p><img src="/2024/04/07/CSharp%E5%88%9D%E8%AF%86/image-20240418201116576.png"></p>
+<ul>
+<li><p>第一个程序，点击运行</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.Linq;</span><br><span class="line"><span class="keyword">using</span> System.Text;</span><br><span class="line"><span class="keyword">using</span> System.Threading.Tasks;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">HelloWorldCSharp</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">internal</span> <span class="keyword">class</span> <span class="title">Program</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="built_in">string</span>[] args</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(<span class="string">&quot;CSharp第一个程序&quot;</span>);</span><br><span class="line">            Console.ReadKey();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>编译完成的文件在项目目录–&gt;bin–&gt;Debug</p>
+</li>
 </ul>
 
   </div>
@@ -223,7 +238,7 @@
     
     
       <div id="toc-footer" style="display: none">
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E6%9C%9F%E5%87%86%E5%A4%87"><span class="toc-number">2.</span> <span class="toc-text">前期准备</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85"><span class="toc-number">2.1.</span> <span class="toc-text">环境安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E7%A8%8B%E5%B7%A5%E5%85%B7%EF%BC%9AVS-Code"><span class="toc-number">2.2.</span> <span class="toc-text">编程工具：VS Code</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85"><span class="toc-number">2.2.1.</span> <span class="toc-text">下载安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8F%92%E4%BB%B6"><span class="toc-number">2.2.2.</span> <span class="toc-text">插件</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E6%9C%9F%E5%87%86%E5%A4%87"><span class="toc-number">2.</span> <span class="toc-text">前期准备</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85"><span class="toc-number">2.1.</span> <span class="toc-text">环境安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E7%A8%8B%E5%B7%A5%E5%85%B7%EF%BC%9AVS-2022-Community%EF%BC%88%E7%A4%BE%E5%8C%BA%E7%89%88%EF%BC%89"><span class="toc-number">2.2.</span> <span class="toc-text">编程工具：VS 2022 Community（社区版）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85"><span class="toc-number">2.2.1.</span> <span class="toc-text">下载安装</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E7%AC%AC%E4%B8%80%E4%B8%AA%E9%A1%B9%E7%9B%AE"><span class="toc-number">3.</span> <span class="toc-text">创建第一个项目</span></a></li></ol>
       </div>
     
 

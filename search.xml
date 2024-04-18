@@ -5,7 +5,7 @@
     <entry>
       <title><![CDATA[CSharp初识]]></title>
       <url>/2024/04/07/CSharp%E5%88%9D%E8%AF%86/</url>
-      <content type="html"><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>高级语言，必须依附于.NET平台</p>
+      <content type="html"><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>微软开发的高级语言，必须依附于.NET平台</p>
 <ul>
 <li>与C&#x2F;C++的区别：<br>  C&#x2F;C++ 运行时 代码由编译器编译为机器指令直接运行<br>  C# 编译时 由编译器编译为 IL中间语言 运行时经过.NET CLR转为机器指令<br>  1.优点：直接编译为机器语言时耗费时间，这样会提升开发效率<br>  2.缺点：性能降低</li>
 </ul>
@@ -15,8 +15,21 @@
 </ul>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dotnet --version</span><br></pre></td></tr></table></figure>
 
-<h3 id="编程工具：VS-Code"><a href="#编程工具：VS-Code" class="headerlink" title="编程工具：VS Code"></a>编程工具：VS Code</h3><h4 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a>下载安装</h4><h4 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h4><ul>
-<li>C#开发工具包：C# Dev Kit<br> 扩展工具，为C#开发提供了一系列强大的功能和实用工具，以帮助您更高效地编写、调试和维护代码。<br><img src="/2024/04/07/CSharp%E5%88%9D%E8%AF%86/image-20240418161602085.png"></li>
+<h3 id="编程工具：VS-2022-Community（社区版）"><a href="#编程工具：VS-2022-Community（社区版）" class="headerlink" title="编程工具：VS 2022 Community（社区版）"></a>编程工具：VS 2022 Community（社区版）</h3><h4 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a>下载安装</h4><ul>
+<li>网址：<a href="https://visualstudio.microsoft.com/zh-hans/vs/community/">Visual Studio 2022 社区版 - 下载最新的免费版本 (microsoft.com)</a></li>
+<li>安装完成后，选择安装.NET桌面开发<img src="/2024/04/07/CSharp%E5%88%9D%E8%AF%86/image-20240418195047963.png"><br>后续需要使用unity开发也可再通过工具–&gt;获取工具和功能进入这个页面进行下载和卸载</li>
+</ul>
+<h2 id="创建第一个项目"><a href="#创建第一个项目" class="headerlink" title="创建第一个项目"></a>创建第一个项目</h2><ul>
+<li>选择控制台应用（.NET Framework），创建应用程序</li>
+</ul>
+<p><img src="/2024/04/07/CSharp%E5%88%9D%E8%AF%86/image-20240418200714020.png"></p>
+<p><img src="/2024/04/07/CSharp%E5%88%9D%E8%AF%86/image-20240418201116576.png"></p>
+<ul>
+<li><p>第一个程序，点击运行</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.Linq;</span><br><span class="line"><span class="keyword">using</span> System.Text;</span><br><span class="line"><span class="keyword">using</span> System.Threading.Tasks;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">HelloWorldCSharp</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">internal</span> <span class="keyword">class</span> <span class="title">Program</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="built_in">string</span>[] args</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(<span class="string">&quot;CSharp第一个程序&quot;</span>);</span><br><span class="line">            Console.ReadKey();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>编译完成的文件在项目目录–&gt;bin–&gt;Debug</p>
+</li>
 </ul>
 ]]></content>
       

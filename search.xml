@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+    
+    <entry>
+      <title><![CDATA[CSharp初识]]></title>
+      <url>/2024/04/07/CSharp%E5%88%9D%E8%AF%86/</url>
+      <content type="html"><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>高级语言，必须依附于.NET平台</p>
+<ul>
+<li>与C&#x2F;C++的区别：<br>  C&#x2F;C++ 运行时 代码由编译器编译为机器指令直接运行<br>  C# 编译时 由编译器编译为 IL中间语言 运行时经过.NET CLR转为机器指令<br>  1.优点：直接编译为机器语言时耗费时间，这样会提升开发效率<br>  2.缺点：性能降低</li>
+</ul>
+<h2 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h2><h3 id="环境安装"><a href="#环境安装" class="headerlink" title="环境安装"></a>环境安装</h3><ul>
+<li>.NET(dotnet)<a href="https://dotnet.microsoft.com/zh-cn/download">下载 .NET(Linux、macOS 和 Windows) (microsoft.com)</a></li>
+<li>查询本机安装的.NET环境版本：</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dotnet --version</span><br></pre></td></tr></table></figure>
+
+<h3 id="编程工具：VS-Code"><a href="#编程工具：VS-Code" class="headerlink" title="编程工具：VS Code"></a>编程工具：VS Code</h3><h4 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a>下载安装</h4><h4 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h4><ul>
+<li>C#开发工具包：C# Dev Kit<br> 扩展工具，为C#开发提供了一系列强大的功能和实用工具，以帮助您更高效地编写、调试和维护代码。<br><img src="/2024/04/07/CSharp%E5%88%9D%E8%AF%86/image-20240418161602085.png"></li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 学习 </category>
+            
+            <category> Unity </category>
+            
+            <category> CSharp </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 学习 </tag>
+            
+            <tag> CSharp </tag>
+            
+            <tag> Unity </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[TaiGa安装]]></title>
+      <url>/2024/04/01/TaiGa%E5%AE%89%E8%A3%85/</url>
+      <content type="html"><![CDATA[<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="拉取项目"><a href="#拉取项目" class="headerlink" title="拉取项目"></a>拉取项目</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/tonynii/taiga_docker-compose.git</span><br></pre></td></tr></table></figure>
+]]></content>
+      
+        <categories>
+            
+            <category> 工作 </category>
+            
+            <category> 学习 </category>
+            
+            <category> TaiGa </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 学习 </tag>
+            
+            <tag> 项目管理系统 </tag>
+            
+            <tag> TaiGa </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Docker应用]]></title>
+      <url>/2024/03/22/Docker%E5%BA%94%E7%94%A8/</url>
+      <content type="html"></content>
+      
+        <categories>
+            
+            <category> 学习 </category>
+            
+            <category> Docker </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 学习 </tag>
+            
+            <tag> Docker </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[DockerDesktop及DockerCompose使用]]></title>
+      <url>/2024/03/21/DockerDesktop%E5%8F%8ADockerCompose%E4%BD%BF%E7%94%A8/</url>
+      <content type="html"><![CDATA[<h3 id="DockerDesktop"><a href="#DockerDesktop" class="headerlink" title="DockerDesktop"></a>DockerDesktop</h3><h4 id="Containers：容器"><a href="#Containers：容器" class="headerlink" title="Containers：容器"></a>Containers：容器</h4><h4 id="Images-：镜像"><a href="#Images-：镜像" class="headerlink" title="Images ：镜像"></a>Images ：镜像</h4><h4 id="Volumes-：数据卷"><a href="#Volumes-：数据卷" class="headerlink" title="Volumes ：数据卷"></a>Volumes ：数据卷</h4><ul>
+<li>在容器中运行的数据会随着容器的停止而删除，Volumes就是用来持久化数据的</li>
+</ul>
+<h4 id="Dev-Environments：开发环境"><a href="#Dev-Environments：开发环境" class="headerlink" title="Dev Environments：开发环境"></a>Dev Environments：开发环境</h4><ul>
+<li>可以在其中用代码构建开发环境，可以共享给别人，用于项目开发过程中项目组成员的开发环境一致</li>
+</ul>
+<h3 id="DockerCompose"><a href="#DockerCompose" class="headerlink" title="DockerCompose"></a>DockerCompose</h3><ul>
+<li>用于解决各个环境之间的关联问题</li>
+</ul>
+<p><img src="/2024/03/21/DockerDesktop%E5%8F%8ADockerCompose%E4%BD%BF%E7%94%A8/image-20240321171552441.png"></p>
+<p><img src="/2024/03/21/DockerDesktop%E5%8F%8ADockerCompose%E4%BD%BF%E7%94%A8/image-20240321171727416.png"></p>
+]]></content>
+      
+        <categories>
+            
+            <category> 学习 </category>
+            
+            <category> Docker </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 学习 </tag>
+            
+            <tag> Docker </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Docker容器使用]]></title>
+      <url>/2024/03/21/Docker%E5%AE%B9%E5%99%A8%E4%BD%BF%E7%94%A8/</url>
+      <content type="html"><![CDATA[<h2 id="两个重要概念"><a href="#两个重要概念" class="headerlink" title="两个重要概念"></a>两个重要概念</h2><ul>
+<li><p><strong>容器化</strong> ：将软件打包成容器的过程<br><img src="/2024/03/21/Docker%E5%AE%B9%E5%99%A8%E4%BD%BF%E7%94%A8/image-20240321161023527.png"></p>
+</li>
+<li><p><strong>Dockerfile</strong> ：文本文件，里面是一条条指令，告诉Docker构建应用程序镜像说需要的步骤与配置</p>
+</li>
+</ul>
+<h2 id="HelloDocker"><a href="#HelloDocker" class="headerlink" title="HelloDocker"></a>HelloDocker</h2><ul>
+<li><p>新建文件夹HelloDocker</p>
+</li>
+<li><p>新建文件index.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;Hello Docker&quot;</span>)</span><br><span class="line"><span class="comment">//控制台输出日志Hello Docker</span></span><br></pre></td></tr></table></figure></li>
+<li><p>新建文件Dockerflie（没有扩展文件名）（可以在VScode中下载Docker插件）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">FROM node:14-alpine</span><br><span class="line"># 使用镜像</span><br><span class="line">COPY index.js /index.js</span><br><span class="line"># sourse:相当于Dockerfile文件的路径</span><br><span class="line"># dest:相当于镜像的路径 根路径为/</span><br><span class="line">CMD [ &quot;node&quot; ,&quot;/index.js&quot;]</span><br><span class="line"># cmd命令 第一个引号内是可执行程序的名字</span><br><span class="line"># 第二个是其接受到参数</span><br><span class="line"># 或者写成cmd node /index.js</span><br></pre></td></tr></table></figure></li>
+<li><p>打开当前文件夹下的终端:<br>  -t 后是构建镜像的名字<br>  . 是指当前路径目录，Dockerfile所在目录</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker build -t hello-docker .</span><br></pre></td></tr></table></figure>
+<p><img src="/2024/03/21/Docker%E5%AE%B9%E5%99%A8%E4%BD%BF%E7%94%A8/image-20240321164124585.png"></p>
+</li>
+<li><p>ls并不能看到构建的镜像，需要使用<strong>docker image ls</strong>或者<strong>docker images</strong>查看所有构建的镜像<br>  <img src="/2024/03/21/Docker%E5%AE%B9%E5%99%A8%E4%BD%BF%E7%94%A8/image-20240321164421813.png"></p>
+<p>  TAG是版本，如果不指定版本，显示lastest</p>
+</li>
+<li><p>运行命令：<strong>docker run 镜像名</strong><br>  <img src="/2024/03/21/Docker%E5%AE%B9%E5%99%A8%E4%BD%BF%E7%94%A8/image-20240321164736757.png"></p>
+</li>
+<li><p>可以将镜像文件移动到任意系统上运行，或者将其上传到dockerhub上，别人就可以通过docker pull克隆下来使用，与github逻辑一样</p>
+</li>
+<li><p>在线docker免费使用网站 <a href="https://labs.play-with-docker.com/">Play with Docker (play-with-docker.com)</a></p>
+</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 学习 </category>
+            
+            <category> Docker </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 学习 </tag>
+            
+            <tag> Docker </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Docker容器简介及安装]]></title>
+      <url>/2024/03/21/Docker%E5%AE%B9%E5%99%A8%E7%AE%80%E4%BB%8B%E5%8F%8A%E5%AE%89%E8%A3%85/</url>
+      <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>教程： <a href="https://docker.easydoc.net/doc/81170005/cCewZWoN/lTKfePfP">🎉 Docker 简介和安装 - Docker 快速入门 - 易文档 (easydoc.net)</a></p>
+<ul>
+<li><p>应用<strong>打包</strong>、<strong>分发</strong>、<strong>部署</strong>的工具<br>   <strong>打包</strong>：将开发软件、第三方库、软件依赖打包在一起<br>   <strong>分发</strong>：将打包的“包”上传，其他人方便获取和安装<br>   <strong>部署</strong>：用“包”可以在任意系统上运行开发的软件</p>
+</li>
+<li><p>可以理解为一个虚拟机，并且只包含你软件运行的环境，其他的都不要，性能好</p>
+<p>  与普通虚拟机的区别</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>普通虚拟机</th>
+<th>Docker</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>性能</td>
+<td>虚拟了完整的系统，内存占用大，性能损耗大</td>
+<td>只虚拟运行环境，减少其余配置</td>
+</tr>
+<tr>
+<td>软件及环境安装</td>
+<td>手动安装，分别安装</td>
+<td>一个命令安装所需所有环境</td>
+</tr>
+</tbody></table>
+<ul>
+<li>优点：确保在所有系统上都是一致的环境，不会出现本机部署没问题，到虚拟机上就出现各种各样问题</li>
+<li>可以在<strong>windows</strong>上体验linux</li>
+<li><strong>镜像</strong> ：可以理解为软件安装包，是打包后产生的“包”，方便移动、传播、安装，也可以理解为java中的类</li>
+<li><strong>容器</strong> ：镜像安装后产生的一个“盒子”，与安装所在系统隔离开，每个软件的运行环境独立，也是Docker可以在不同系统上运行的原因，可以理解为java中的对象，是类（镜像）的实例</li>
+<li><strong>仓库</strong> ：可以存放镜像的地方，可以进行上传、分享、下载</li>
+</ul>
+<h2 id="安装–CentOS-7"><a href="#安装–CentOS-7" class="headerlink" title="安装–CentOS 7"></a>安装–CentOS 7</h2><p>教程：<a href="https://blog.csdn.net/u014069688/article/details/100532774">Centos7下安装Docker（详细安装教程）_centos7安装教程-CSDN博客</a></p>
+<h4 id="1、前期准备"><a href="#1、前期准备" class="headerlink" title="1、前期准备"></a>1、前期准备</h4><ul>
+<li>root用户登录，不使用root用户的话，每条命令前加上sudo</li>
+<li>查看虚拟机内核版本，至少3.8以上</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# uname -a</span><br><span class="line">Linux localhost.localdomain 3.10.0-1160.el7.x86_64 #1 SMP Mon Oct 19 16:18:59 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux</span><br></pre></td></tr></table></figure>
+<ul>
+<li>yum包更新到最新(期间选择确认，输入y即可)<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum update</span><br></pre></td></tr></table></figure></li>
+<li>安装所需软件包<br>  yum-utils 提供了 yum-config-manager ，并且 device mapper 存储驱动程序需要 device-mapper-persistent-data 和 lvm2。<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum install -y yum-utils</span><br><span class="line">yum install -y lvm2</span><br><span class="line">yum install -y device-mapper-persistent-data</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="安装–Windows"><a href="#安装–Windows" class="headerlink" title="安装–Windows"></a>安装–Windows</h2><ul>
+<li>windows需要先启用Hyper-v功能，控制面板-&gt;程序-&gt;程序和功能-&gt;启用或关闭Windows功能</li>
+<li>官网下载：<a href="https://www.docker.com/products/docker-desktop/">Docker Desktop: The #1 Containerization Tool for Developers | Docker</a></li>
+<li>点击ok，开始安装<img src="/2024/03/21/Docker%E5%AE%B9%E5%99%A8%E7%AE%80%E4%BB%8B%E5%8F%8A%E5%AE%89%E8%A3%85/image-20240321152038680.png"></li>
+<li>点击close，重启电脑</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 学习 </category>
+            
+            <category> Docker </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 学习 </tag>
+            
+            <tag> Docker </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[影刀RPA]]></title>
+      <url>/2024/03/19/%E5%BD%B1%E5%88%80RPA/</url>
+      <content type="html"><![CDATA[<h2 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h2><h3 id="1、影刀rpa是什么？"><a href="#1、影刀rpa是什么？" class="headerlink" title="1、影刀rpa是什么？"></a>1、影刀rpa是什么？</h3><ul>
+<li>一个开发、运行软件机器人的平台，能模拟各种人工操作</li>
+<li>在任何应用程式上进行输入、任何应用屏幕上读取信息、套用一定规则并且使用AI做决策</li>
+<li>除了主观决策之外可以做人能做的所有事情，它可以操作世界上的任何软件应用&#x2F;平台</li>
+<li><a href="https://www.yingdao.com/">影刀RPA - 影刀官网 (yingdao.com)</a></li>
+</ul>
+<h3 id="2、影刀能做什么"><a href="#2、影刀能做什么" class="headerlink" title="2、影刀能做什么"></a>2、影刀能做什么</h3><ul>
+<li>任何<strong>网页</strong>和<strong>软件</strong>的自动化<ul>
+<li>网页JS脚本，数据提取，数据抓取、Web表单填写、网页操作，API调用等，轻松实现自动化的Web任务</li>
+<li>ERP、浏览器、CRM、微信、钉钉或你日常使用的任何其他应用程序</li>
+</ul>
+</li>
+<li>任何<strong>手机APP</strong>自动化</li>
+<li><strong>鼠标键盘</strong>自动化</li>
+<li>Excel自动化</li>
+<li>数据库自动化</li>
+</ul>
+<h3 id="3、特点"><a href="#3、特点" class="headerlink" title="3、特点"></a>3、特点</h3><h5 id="易上手"><a href="#易上手" class="headerlink" title="易上手"></a>易上手</h5><ul>
+<li><strong>拖拽式流程搭建</strong><img src="/2024/03/19/%E5%BD%B1%E5%88%80RPA/Pasted%20image%2020240319162949.png"></li>
+<li><strong>流程自动录制功能</strong><img src="/2024/03/19/%E5%BD%B1%E5%88%80RPA/Pasted%20image%2020240319163019.png"></li>
+<li><strong>快捷的元素捕获方式</strong><img src="/2024/03/19/%E5%BD%B1%E5%88%80RPA/Pasted%20image%2020240319163024.png"></li>
+</ul>
+<h5 id="功能强大：丰富指令和扩展"><a href="#功能强大：丰富指令和扩展" class="headerlink" title="功能强大：丰富指令和扩展"></a>功能强大：丰富指令和扩展</h5><ul>
+<li><strong>丰富的指令集（功能集）</strong>：提供了完善的指令集，且支持自定义指令<img src="/2024/03/19/%E5%BD%B1%E5%88%80RPA/Pasted%20image%2020240319163139.png" alt="提供了完善的指令集，且支持自定义指令"></li>
+<li><strong>编码版及无限扩展</strong>：支持网页<strong>JS脚本、Python代码及各类Python库的接入</strong><img src="/2024/03/19/%E5%BD%B1%E5%88%80RPA/Pasted%20image%2020240319163423.png"></li>
+</ul>
+<h5 id="提供大量通用应用，直接免费获取"><a href="#提供大量通用应用，直接免费获取" class="headerlink" title="提供大量通用应用，直接免费获取"></a>提供大量通用应用，直接免费获取</h5><ul>
+<li>可以在官方市场，直接获取稳定的影刀官方开发的常规通用应用</li>
+</ul>
+<h3 id="4、自动化操作"><a href="#4、自动化操作" class="headerlink" title="4、自动化操作"></a>4、自动化操作</h3><ol>
+<li>计划执行</li>
+</ol>
+<ul>
+<li><strong>提前设定时间</strong>对应用进行操作</li>
+</ul>
+<ol start="2">
+<li>**触发器</li>
+</ol>
+<ul>
+<li>监测电脑变化来触发执行，如：文件变化、邮件变化、快捷键输入等</li>
+</ul>
+<h2 id="二、"><a href="#二、" class="headerlink" title="二、"></a>二、</h2>]]></content>
+      
+        <categories>
+            
+            <category> 工作 </category>
+            
+            <category> RPA </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 学习 </tag>
+            
+            <tag> RPA </tag>
+            
+        </tags>
+        
+    </entry>
+    
+  
+  
+</search>
